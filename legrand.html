@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Joyería Legrand - Login</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background: linear-gradient(135deg, #111, #3d2c1e);
+    }
+
+    .login-container{
+      background:white;
+      width:350px;
+      padding:40px;
+      border-radius:15px;
+      box-shadow:0 0 20px rgba(0,0,0,0.4);
+      text-align:center;
+    }
+
+    .logo{
+      font-size:28px;
+      font-weight:bold;
+      color:#b8860b;
+      margin-bottom:10px;
+    }
+
+    .sub{
+      color:#666;
+      margin-bottom:30px;
+    }
+
+    .input-group{
+      margin-bottom:20px;
+      text-align:left;
+    }
+
+    .input-group label{
+      display:block;
+      margin-bottom:5px;
+      color:#333;
+      font-size:14px;
+    }
+
+    .input-group input{
+      width:100%;
+      padding:12px;
+      border:1px solid #ccc;
+      border-radius:8px;
+      outline:none;
+      transition:0.3s;
+    }
+
+    .input-group input:focus{
+      border-color:#b8860b;
+      box-shadow:0 0 5px rgba(184,134,11,0.5);
+    }
+
+    .btn-login{
+      width:100%;
+      padding:12px;
+      background:#b8860b;
+      border:none;
+      color:white;
+      font-size:16px;
+      border-radius:8px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .btn-login:hover{
+      background:#946b00;
+    }
+
+    .message{
+      margin-top:15px;
+      font-size:14px;
+      color:red;
+    }
+
+    footer{
+      margin-top:20px;
+      font-size:12px;
+      color:#777;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <div class="logo">💎 Joyería Legrand</div>
+    <div class="sub">Iniciar sesión</div>
+
+    <form id="loginForm">
+      <div class="input-group">
+        <label>Usuario</label>
+        <input type="text" id="usuario" placeholder="Ingrese su usuario">
+      </div>
+
+      <div class="input-group">
+        <label>Contraseña</label>
+        <input type="password" id="password" placeholder="Ingrese su contraseña">
+      </div>
+
+      <button type="submit" class="btn-login">Ingresar</button>
+
+      <div class="message" id="message"></div>
+    </form>
+
+    <footer>
+      © 2025 Joyería Legrand
+    </footer>
+  </div>
+
+  <script>
+    const form = document.getElementById("loginForm");
+    const message = document.getElementById("message");
+
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+
+      const usuario = document.getElementById("usuario").value;
+      const password = document.getElementById("password").value;
+
+      if(usuario === "admin" && password === "1234"){
+        message.style.color = "green";
+        message.textContent = "Inicio de sesión exitoso";
+      } else {
+        message.style.color = "red";
+        message.textContent = "Usuario o contraseña incorrectos";
+      }
+    });
+  </script>
+
+</body>
+</html>
